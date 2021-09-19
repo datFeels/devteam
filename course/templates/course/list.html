@@ -1,0 +1,151 @@
+{% extends 'course/base.html' %}
+{% block content %}
+<div class="main-body">
+    <div class="row gutters-sm">
+        <div class="col-md-12">
+            <div class="container">
+                <div class="row">
+                    {% for course in courses %}
+                    <div class="col-md-3">
+                        <p style="text-align:center">{{ course.name }}</p>
+                        <p style="text-align:center">{{ course.desc }}</p>
+                    </div>
+                     {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row gutters-sm">
+         <div class="col-md-12">
+            <div class="container">
+                <div class="row">
+                <div class="col-md-3">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                              <th scope="col">序号</th>
+                              <th scope="col">课名</th>
+                              <th scope="col">程序</th>
+                              <th scope="col">素材</th>
+                              <th scope="col">大纲</th>
+                              <th scope="col">PPT</th>
+                              <th scope="col">教具/游戏</th>
+                              <th scope="col">知识点</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for m1 in m1s %}
+                                <tr>
+                                    <td>{{ forloop.counter }}</td>
+                                    <td>{{ m1.lname }}</td>
+                                    <td>{% if m1.program %}&#10003;{% else %}x{% endif %}</td>
+                                    <td>{% if m1.sprites %}&#10003;{% else %}x{% endif %}</td>
+                                    <td>{% if m1.plan %}&#10003;{% else %}x{% endif %}</td>
+                                    <td>{% if m1.ppt %}&#10003;{% else %}x{% endif %}</td>
+                                    <td>{% if m1.game %}&#10003;{% else %}x{% endif %}</td>
+                                    <td>{{ m1.knowledge }}</td>
+                                </tr>
+                             {% endfor %}
+                        </tbody>
+                    </table>
+                    <a href="17/update"><button class="btn-xs btn-outline-info" type="submit">修改</button></a>
+                </div>
+                <div class="col-md-3">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                              <th scope="col">序号</th>
+                              <th scope="col">课名</th>
+                              <th scope="col">程序</th>
+                              <th scope="col">素材</th>
+                              <th scope="col">大纲</th>
+                              <th scope="col">PPT</th>
+                              <th scope="col">教具/游戏</th>
+                              <th scope="col">知识点</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for m2 in m2s %}
+                                <tr>
+                                    <td>{{ forloop.counter }}</td>
+                                    <td>{{ m2.lname }}</td>
+                                    <td>{% if m2.program %}&#10003;{% else %}x{% endif %}</td>
+                                    <td>{% if m2.sprites %}&#10003;{% else %}x{% endif %}</td>
+                                    <td>{% if m2.plan %}&#10003;{% else %}x{% endif %}</td>
+                                    <td>{% if m2.ppt %}&#10003;{% else %}x{% endif %}</td>
+                                    <td>{% if m2.game %}&#10003;{% else %}x{% endif %}</td>
+                                    <td>{{ m2.knowledge }}</td>
+                                </tr>
+                             {% endfor %}
+                        </tbody>
+                    </table>
+                    <a href="18/update"><button class="btn-xs btn-outline-info" type="submit">修改</button></a>
+                </div>
+                <div class="col-md-3">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                              <th scope="col">序号</th>
+                              <th scope="col">课名</th>
+                              <th scope="col">程序</th>
+                              <th scope="col">素材</th>
+                              <th scope="col">大纲</th>
+                              <th scope="col">PPT</th>
+                              <th scope="col">教具/游戏</th>
+                              <th scope="col">知识点</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for v1 in v1s %}
+                                <tr>
+                                    <td>{{ forloop.counter }}</td>
+                                    <td>{{ v1.lname }}</td>
+                                    <td>{% if v1.program %}&#10003;{% else %}x{% endif %}</td>
+                                    <td>{% if v1.sprites %}&#10003;{% else %}x{% endif %}</td>
+                                    <td>{% if v1.plan %}&#10003;{% else %}x{% endif %}</td>
+                                    <td>{% if v1.ppt %}&#10003;{% else %}x{% endif %}</td>
+                                    <td>{% if v1.game %}&#10003;{% else %}x{% endif %}</td>
+                                    <td>{{ v1.knowledge }}</td>
+                                </tr>
+                             {% endfor %}
+                        </tbody>
+                    </table>
+                    <a href="19/update"><button class="btn-xs btn-outline-info" type="submit">修改</button></a>
+                </div>
+                <div class="col-md-3">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                              <th scope="col">序号</th>
+                              <th scope="col">课名</th>
+                              <th scope="col">程序</th>
+                              <th scope="col">素材</th>
+                              <th scope="col">大纲</th>
+                              <th scope="col">PPT</th>
+                              <th scope="col">教具/游戏</th>
+                              <th scope="col">知识点</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for p1 in p1s %}
+                                <tr>
+                                    <td>{{ forloop.counter }}</td>
+                                    <td>{{ p1.lname }}</td>
+                                    <td>{% if p1.program %}&#10003;{% else %}x{% endif %}</td>
+                                    <td>{% if p1.sprites %}&#10003;{% else %}x{% endif %}</td>
+                                    <td>{% if p1.plan %}&#10003;{% else %}x{% endif %}</td>
+                                    <td>{% if p1.ppt %}&#10003;{% else %}x{% endif %}</td>
+                                    <td>{% if p1.game %}&#10003;{% else %}x{% endif %}</td>
+                                    <td>{{ p1.knowledge }}</td>
+                                </tr>
+                             {% endfor %}
+                        </tbody>
+                    </table>
+                    <a href="20/update"><button class="btn-xs btn-outline-info" type="submit">修改</button></a>
+                </div>
+            </div>
+            </div>
+         </div>
+    </div>
+</div>
+{% endblock content%}

@@ -1,0 +1,38 @@
+{% extends "course/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class='container'>
+	<div class="col-md-12">
+    {% if not request.user.is_authenticated %}
+	<div class="content-section">
+		<form method="POST">
+			{% csrf_token %}
+            {% if error %} <p>{{ error }} </p> {% endif %}
+			<fieldset class="form-group">
+				<legend class="border-bottom mb-4">
+					Login
+				</legend>
+				<!--print out the form-->
+				<div class="form-group col-sm-4 mb-0">
+					<input type="text" name="username" placeholder="enter username">
+                </div>
+                <div class="form-group col-sm-4 mb-0">
+					<input type="password" name="password" placeholder="enter password">
+                </div>
+            </fieldset>
+            <div class="form-group">
+				<button class="btn btn-outline-info" type="submit">Sign Up</button>
+			</div>
+        </form>
+		<div class="border-top pt-3">
+			<small class="text-muted">
+				<a class="ml-2" href="#">Register</a>
+			</small>
+		</div>
+ 	</div>
+    {% else %}
+        <p>Already logged in, to <a href="../logout/">log out</a></p>
+    {% endif %}
+	</div>
+</div>
+{% endblock content %}
